@@ -86,7 +86,16 @@ public class OTAFragment extends Fragment implements AudioIdentificationListener
     {
         try
         {
-        	File IdDBDir = new File( getActivity().getApplicationContext().getFilesDir(), "id_data" );
+        	String IdDBDirBase = getActivity().getApplicationContext().getFilesDir();
+
+        	/*
+        	 *   This is the directory where the reference database files will
+        	 *   be stored. You can use the command line tools included in the
+        	 *   SDK to create the audio id reference database and then put the
+        	 *   produced files (data.idx, data.qfp and data.met) in the 'assets'
+        	 *   directory. The app will extract these files in IdDBDir.
+        	 */
+        	File IdDBDir = new File(IdDBDirBase , "id_data" );
 
             ExtractIdDatastore( IdDBDir );
 
