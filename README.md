@@ -37,7 +37,7 @@ OTA (Over-The-Air) audio recognition. In order for the app to be able to identif
 being played in the ambient it is necessary to build a reference database, that is
 a collection of the audio that we want to recognize, encoded in a special format.
 This database can be built using the command line tools provided in the SDK or,
-better, the desktop demo which provides a UI. You can download the demo [here](www.audioneex.com/downloads.html).
+better, the desktop demo which provides a UI. You can download the demo [here](http://www.audioneex.com/downloads.html).
 Creating a reference database is as easy as specifying a directory containing audio
 files and pushing a button. Please refer to the docs included with the demo app
 for more info.
