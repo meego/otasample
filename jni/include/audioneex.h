@@ -10,6 +10,8 @@
 	
 */
 
+/*  DO NOT MODIFY THIS FILE */
+
 #ifndef AUDIONEEX_API_H
 #define AUDIONEEX_API_H
 
