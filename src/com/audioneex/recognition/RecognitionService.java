@@ -124,15 +124,13 @@ public class RecognitionService implements Runnable, AudioSourceServiceListener 
         //mRecognizer.SetIdentificationMode( IdentificationType.FUZZY.toInt() );
 	    mRecognizer.SetBinaryIdThreshold( 0.7f );
 
-		// Create the buffer queue
+		// Create a queue of 2-second long buffers, 11025Hz, mono
 		AudioBuffer captureBuffer = new AudioBuffer16Bit( 11025 * 2, 11025, 1, 0);
-
         mBufferQueue = AudioFactory.CreateRingBuffer(5, captureBuffer);
         
-		// Create the audio service
+		// Create the audio provider
 		mAudioSourceService = new AudioSourceService();
 		mAudioSourceService.setBufferQueue(mBufferQueue);
-		mAudioSourceService.SetSampleRate(11025);
 		mAudioSourceService.Signal(this);		
 	}
 	
