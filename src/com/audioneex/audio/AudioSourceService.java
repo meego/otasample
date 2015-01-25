@@ -40,7 +40,7 @@ import android.util.Log;
 public class AudioSourceService implements Runnable {
 
 	private int mInputDevice = MediaRecorder.AudioSource.MIC;
-	private int mSampleRate = 44100;
+	private int mSampleRate = 11025;
 	private int mChannels = android.media.AudioFormat.CHANNEL_IN_MONO;
 	private int mSampleFormat = android.media.AudioFormat.ENCODING_PCM_16BIT;
 	private boolean mServiceRunning = false;
@@ -88,6 +88,9 @@ public class AudioSourceService implements Runnable {
 			// Give it some more room
 			int buffSize = minBuffSize * 4;
 			
+			// Note that this example code does not deal with audio resampling,
+			// so if the required sampling rate of 11025 Hz is not supported
+			// by the recording device we'll just let it fail.
 			AudioRecord audioSource = new AudioRecord(mInputDevice,
 					                                  mSampleRate, 
 					                                  mChannels, 
