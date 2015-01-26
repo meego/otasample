@@ -86,7 +86,7 @@ public class OTAFragment extends Fragment implements AudioIdentificationListener
     {
         try
         {
-        	String IdDBDirBase = getActivity().getApplicationContext().getFilesDir();
+        	File IdDBDirBase = getActivity().getApplicationContext().getFilesDir();
 
         	/*
         	 *   This is the directory where the reference database files will
