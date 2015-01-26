@@ -24,7 +24,7 @@ as Android Studio's support for native development (to date) is still limited an
    Add Native Support, in the popup dialog insert "audioneex-jni" as the native library name.
 4. Copy libaudioneex.so from the SDK Android lib folder to the jni/lib/armeabi-v7a folder.
    The sample uses Tokyo Cabinet as the storage engine, so you also need to copy libtokyocabinet.so.
-   Custom drivers for different storage engines can be built using the engine's
+   Custom drivers for different databases can be built using the engine's
    interfaces should you prefer other storage solutions.
 
 Build and run the application on the device. Running on emulators is not advised
@@ -43,9 +43,9 @@ files and pushing a button. Please refer to the docs included with the demo app
 for more info.
 
 Once you've built your own reference database, just copy the *data.idx*, *data.qfp* and *data.met*
-in the *asset* directory of the Android project and the app will be ready to perform
+in the *assets* directory of the Android project and the app will be ready to perform
 recognition of audio playing in the surrounding environment.
 
-Please refer to the documentation provided in the SDK and at www.audioneex.com
+Please refer to the documentation included in the SDK and on www.audioneex.com
 for more information about the engine and how to use it.
 
