@@ -173,9 +173,9 @@ public class RecognitionService implements Runnable, AudioSourceServiceListener 
     	              // This causes any pending audio buffer to be discarded.
     	              // This flag should be cleared when the audio thread is
     	              // restarted for a new identification.
-    	              // If you need continuous identification (for example
+    	              // If continuous identification is needed (for example
     	              // to implement autodiscovery services) then disable
-    	              // the following instructions accordingly.
+    	              // session completion until explicitly stopped.
     	              if(!mAutodiscovery){
     	                  mSessionComplete = true;
     	                  mAudioSourceService.Stop();
