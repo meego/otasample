@@ -101,6 +101,7 @@ public class OTAFragment extends Fragment implements AudioIdentificationListener
 
             mRecognitionService = new RecognitionService( IdDBDir.getPath() );
             mRecognitionService.Signal(this);
+            mRecognitionService.SetAutodiscovery(true);
             mRecognitionService.Start();
 
         }catch(Exception e){
@@ -187,7 +188,11 @@ public class OTAFragment extends Fragment implements AudioIdentificationListener
                         }else if(matches.length() > 1){
                             viewmsg = "Multiple matches found";
                         }else{
-                            viewmsg = "No match found";
+                       	    if(mRecognitionService.GetAutodiscovery()==false){
+                               viewmsg = "No match found";
+                       	    } else {
+              	               viewmsg = "Listening ...";
+                       	    }
                         }
                     }else if(results.get("status").equals("ERROR")){
                         viewmsg = "An error occurred during the identification";
