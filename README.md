@@ -15,8 +15,8 @@ Both the Android SDK and NDK must be installed and correctly configured.
 ## Building the app
 
 To build the app simply import the source directory into your favourite IDE,
-create a project and build it. Here I will only explain the steps for Eclipse
-as Android Studio's support for native development (to date) is still limited and clumsy.
+create a project and build it. Here I will only explain the steps for Eclipse.
+For Android Studio you can find a port [here](https://bitbucket.org/boeboe/audioneex-demo).
 
 1. Import the source directory into the workspace (File->Import...)
 2. Add the Android Support Library v7 to the project if necessary (Project->
