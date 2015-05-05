@@ -96,12 +96,23 @@ enum eIdClass {
     IDENTIFIED     ///< There is a clear evidence of a match
 };
 
-/// Structure for identified best matches
+/// Structure for identified best matches returned by the Recognizer. Clients
+/// will use this information to link the identified audio to its metadata,
+/// to verify the degree of confidence of the identification and to get the
+/// time point within the identified recording at which the match of the current
+/// audio occurred.
+/// @note The CuePoint is an estimation and may not exactly represent the real point.
+///       The engine works by identifying similarities between the given audio snippet
+///       and the reference recordings and it may happen that there are many parts in
+///       a recording that are perceptually identical. This is common in music (for
+///       example in refrains) so the current audio snippet may match the recording at
+///       different time points that cannot be easily disambiguated.
 struct IdMatch{
     uint32_t FID;          ///< The fingerprint's unique identifier
     float    Confidence;   ///< A measure of the confidence of match
     float    Score;        ///< The score assigned to the match
     eIdClass IdClass;      ///< The identification class label (see eIdClass)
+    uint32_t CuePoint;     ///< Estimated time point within the recording being identified
 };
 
 /// A structure holding the header for an index list
