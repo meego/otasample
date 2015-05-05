@@ -277,6 +277,7 @@ std::string ResultsToJSON(const Audioneex::IdMatch* results)
            << "\"Score\":" << results[i].Score << ","
            << "\"Confidence\":" << results[i].Confidence << ","
            << "\"IdClass\":\"" << idclass[results[i].IdClass] << "\","
+           << "\"CuePoint\":" << results[i].CuePoint << ","
            << "\"Metadata\":" << "\"" << meta << "\""
            << "}";
     }
