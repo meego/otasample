@@ -185,6 +185,10 @@ public class OTAFragment extends Fragment implements AudioIdentificationListener
                         if(matches.length() == 1){
                             JSONObject bestmatch = matches.getJSONObject(0);
                             viewmsg = bestmatch.getString("Metadata");
+                            int cpoint = Integer.parseInt( bestmatch.getString("CuePoint") );
+                            viewmsg += " @ " + String.format("%02d:%02d:%02d", cpoint/3600,
+                                                                              (cpoint%3600)/60,
+                                                                              (cpoint%3600)%60);
                         }else if(matches.length() > 1){
                             viewmsg = "Multiple matches found";
                         }else{
